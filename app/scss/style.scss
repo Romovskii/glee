@@ -3,10 +3,112 @@
 @import 'reset';
 @import 'global';
 
+.header{
+  padding: 50px 0;
+  &__inner{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;  
+  }
+}
 
+.logo{
+  position: relative;
+  &::before{
+    content: "Glee.";
+    font-size: 36px;
+    line-height: 58px;
+    @extend %rubik-500;
+    color: #436372;
+    position: absolute;
+    top: -10px;
+    left: 65px;
+  }
+}
 
+.menu{
+  &__list{
+    display: flex;
+  }
+  &__list-item + .menu__list-item{
+    margin-left: 35px;
+  }
+  &__list-link{
+    color: #436372;
+    @extend %rubik-500;
+  }
+}
 
+.user__nav-link{
+  &_search{
+    background-color: #edf1f4;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+  }
+  &_btn{
+    background-color: #a3bbc8;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin-left: 20px;
+  }
+  &-hearth{
+    background-color: #fcd7b6;
+    border-radius: 50px 0 0 50px;
+    width: 80px;
+    height: 50px;
+  }
+  &-cart{
+    position: relative;
+    background-color: #fcd7b6;
+    border-radius: 0 50px 50px 0;
+    width: 80px;
+    height: 50px;
+    border-left: 1px solid #fde7d3;
+  }
+}
 
+.user__nav{
+  display: flex;
+  &-link{
+    position: relative;
+  }
+  &-img{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+  }
+}
+
+.user__nav-img{
+  &-cart{
+    right: 30px;
+  }
+  &-hearth{
+    right: 30px;
+  }
+}
+
+.user__nav-link{
+  position: relative;
+}
+
+.user__nav-link span{
+  position: absolute;
+  top: 5px;
+  right: 19px;
+  background-color: #fff;
+  color: #000;
+  width: 18px;
+  height: 18px;
+  text-align: center;
+  border-radius: 50%;
+  font-size: 12px;
+  line-height: 20px;
+  @extend %dmsans-400;
+}
 
 
 

@@ -1,6 +1,7 @@
 @import 'vars';
 @import 'fonts';
 @import 'reset';
+@import 'libs';
 @import 'global';
 
 .header{
@@ -18,7 +19,7 @@
     content: "Glee.";
     font-size: 36px;
     line-height: 58px;
-    @extend %rubik-500;
+    @extend %rubik-medium;
     color: #436372;
     position: absolute;
     top: -10px;
@@ -29,17 +30,19 @@
 .menu{
   &__list{
     display: flex;
+    transform: translateX(86px);
   }
   &__list-item + .menu__list-item{
     margin-left: 35px;
   }
   &__list-link{
     color: #436372;
-    @extend %rubik-500;
+    @extend %rubik-medium;
   }
 }
 
 .user__nav-link{
+  position: relative;
   &_search{
     background-color: #edf1f4;
     border-radius: 50%;
@@ -66,19 +69,21 @@
     border-radius: 0 50px 50px 0;
     width: 80px;
     height: 50px;
-    border-left: 1px solid #fde7d3;
   }
 }
 
 .user__nav{
   display: flex;
-  &-link{
-    position: relative;
-  }
   &-img{
     position: absolute;
     top: 15px;
     right: 15px;
+  }
+  &-decor{
+    line-height: 45px;
+    font-size: 35px;
+    color: #fde7d3;
+    background-color: #fcd7b6;
   }
 }
 
@@ -89,10 +94,6 @@
   &-hearth{
     right: 30px;
   }
-}
-
-.user__nav-link{
-  position: relative;
 }
 
 .user__nav-link span{
@@ -108,6 +109,171 @@
   font-size: 12px;
   line-height: 20px;
   @extend %dmsans-400;
+}
+
+.footer__top{
+  display: flex;
+  justify-content: space-between;
+  padding: 80px 0 75px 0;
+  border-bottom: 1px solid #dae4e9;
+  &-items{
+    max-width: 300px;
+  }
+  &-contact{
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+  }
+  &-logo{
+    margin-bottom: 30px;
+  }
+  &-address,
+  &-email,
+  &-phone{
+    @extend %myriad-pro;
+    font-size: 14px;
+    line-height: 24px;
+    color: $footer;
+    margin-bottom: 10px;
+  }
+  &-title{
+    @extend %myriad-pro;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 16px;
+    line-height: 21px;
+    color: #1f2044;
+    margin: 10px 0 25px;
+  }
+  &__nav-list{
+    font-size: 16px;
+    line-height: 32px;
+  }
+  &__nav-link{
+    color: $footer;
+  }
+  &-text{
+    @extend %myriad-pro;
+    font-size: 16px;
+    line-height: 24px;
+    color: $footer;
+    margin-bottom: 40px;
+  }
+  &-items-form{
+    max-width: 270px;
+  }
+  &-form__text{
+    border: none;
+    background-color: #fef7f0;
+    max-width: 170px;
+    margin: 0;
+    padding: 15px;
+    float: left;
+  }
+  &-form__text::placeholder{
+    color: #234969;
+    @extend %dmsans-400;
+    font-size: 12px;
+  }
+  &-form__btn{
+    border: none;
+    background-color: #a3bbc8;
+    @extend %myriad-pro;
+    color: #fff;
+    padding: 14px 12px;
+    margin: 0;
+    cursor: pointer;
+  }
+}
+
+.footer__bottom{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 38px 0 42px;
+  font-size: 14px;
+  line-height: 18px;
+  color: $footer;
+  @extend %myriad-pro;
+  &-nav__items{
+    display: flex;
+  }
+  &-nav-list + .footer__bottom-nav-list{
+    border-left: 1px solid $footer;
+  }
+  &-nav-list{
+    padding: 0 15px;
+  }
+  &-nav-list:nth-child(1){
+    padding-left: 0; 
+  }
+  &-nav-list:nth-child(4){
+    padding-right: 0;
+  }
+  &-nav-link{
+    color: $footer;
+  }
+}
+
+.slider-blog{
+  background-image: url('../images/oreo-slider.png');
+  background-repeat: no-repeat;
+  background-position: 85%;
+  background-color: #fcd7b6;
+  padding: 225px 0 280px;
+  &__items{
+    display: flex !important;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  &__item{
+    max-width: 400px;
+  }
+  &__title{
+    font-size: 70px;
+    color: #243f4d;
+    @extend %rubik-medium;
+    margin-bottom: 40px;
+  }
+  &__text{
+    @extend %rubik-regular;
+    font-size: 18px;
+    line-height: 30px;
+    color: #436372;
+    margin-bottom: 40px;
+  }
+  &__link{
+    display: block;
+    padding: 25px 28px;
+    color: #fff;
+    background-color: #a3bbc8;
+    @extend %rubik-medium;
+    max-width: 200px;
+  }
+}
+
+.slick-dots{
+  display: flex;
+  justify-content: center;
+  transform: translateY(205px);
+  li{
+    margin-left: 10px;
+    button{
+      border: none;
+      @extend %rubik-medium;
+      color: #243f4d;
+      background-color: #fde3cc;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+    }
+    &.slick-active{
+      button{
+        @extend %myriad-pro;
+        background-color: #fff;
+      }
+    }
+  }
 }
 
 

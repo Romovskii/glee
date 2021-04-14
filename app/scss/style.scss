@@ -1,6 +1,7 @@
 @import 'vars';
 @import 'fonts';
 @import 'reset';
+@import 'libs';
 @import 'global';
 
 .header{
@@ -18,7 +19,7 @@
     content: "Glee.";
     font-size: 36px;
     line-height: 58px;
-    @extend %rubik-500;
+    @extend %rubik-medium;
     color: #436372;
     position: absolute;
     top: -10px;
@@ -29,13 +30,14 @@
 .menu{
   &__list{
     display: flex;
+    transform: translateX(86px);
   }
   &__list-item + .menu__list-item{
     margin-left: 35px;
   }
   &__list-link{
     color: #436372;
-    @extend %rubik-500;
+    @extend %rubik-medium;
   }
 }
 
@@ -213,6 +215,66 @@
   }
 }
 
+.slider-blog{
+  background-image: url('../images/oreo-slider.png');
+  background-repeat: no-repeat;
+  background-position: 85%;
+  background-color: #fcd7b6;
+  padding: 225px 0 280px;
+  &__items{
+    display: flex !important;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  &__item{
+    max-width: 400px;
+  }
+  &__title{
+    font-size: 70px;
+    color: #243f4d;
+    @extend %rubik-medium;
+    margin-bottom: 40px;
+  }
+  &__text{
+    @extend %rubik-regular;
+    font-size: 18px;
+    line-height: 30px;
+    color: #436372;
+    margin-bottom: 40px;
+  }
+  &__link{
+    display: block;
+    padding: 25px 28px;
+    color: #fff;
+    background-color: #a3bbc8;
+    @extend %rubik-medium;
+    max-width: 200px;
+  }
+}
+
+.slick-dots{
+  display: flex;
+  justify-content: center;
+  transform: translateY(205px);
+  li{
+    margin-left: 10px;
+    button{
+      border: none;
+      @extend %rubik-medium;
+      color: #243f4d;
+      background-color: #fde3cc;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+    }
+    &.slick-active{
+      button{
+        @extend %myriad-pro;
+        background-color: #fff;
+      }
+    }
+  }
+}
 
 
 

@@ -249,6 +249,17 @@
     background-color: #a3bbc8;
     @extend %rubik-medium;
     max-width: 200px;
+    position: relative;
+    &::after{
+      content: '';
+      position: absolute;
+      background-image: url('../images/arrows.png');
+      background-repeat: no-repeat;
+      width: 22px;
+      height: 10px;
+      top: 30px;
+      right: 20px;
+    }
   }
 }
 
@@ -276,6 +287,49 @@
   }
 }
 
+.blog__info{
+  display: flex;
+  justify-content: space-around;
+  background-color: #fef7f0;
+  padding: 45px 0;
+  &-items{
+    display: flex;
+  }
+  &-img{
+    margin-right: 25px;
+    background-size: auto;
+    background-repeat: no-repeat;
+    width: 60px;
+    height: 60px;
+    transform: translate(0px, 10px);
+  }
+  &-title{
+    font-size: 18px;
+    line-height: 40px;
+    color: #414141;
+    @extend %myriad-pro;
+    font-weight: bold;
+  }
+  &-text{
+    font-size: 16px;
+    line-height: 30px;
+    color: #585858;
+    @extend %myriad-pro;
+  }
+}
+
+.video__popup{
+  background-image: url('../images/video-bg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  &-inner{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 500px;
+  }
+}
 
 
 @import 'media';
